@@ -1,0 +1,14 @@
+name: 'AAA Base Theme'
+type: theme
+description: 'words'
+base theme: classy
+core: 8.x
+libraries:
+  - aaa_base/aaa_base
+regions:
+  header: Header
+  content: Content
+features:
+  logo: true
+  name: true
+  favicon: true

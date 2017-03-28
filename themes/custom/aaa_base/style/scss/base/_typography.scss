@@ -1,0 +1,27 @@
+/**
+ * $file
+ * Typography styles
+ */
+
+// Use inline-font-files for Base-64 convertion. Do not recommend doing this with large font families.
+@include font-face('icons', inline-font-files('icons.woff', 'woff', 'icons.ttf', 'truetype', 'icons.svg', 'svg'), 'icons.eot', normal, normal);
+
+// Proxima Nova font group.
+@include font-face('proxima_nova_thextrabold', font-files('ProximaNova-Xbold-webfont.woff', 'woff', 'ProximaNova-Xbold-webfont.ttf', 'truetype', 'ProximaNova-Xbold-webfont.svg', 'svg'), 'ProximaNova-Xbold-webfont.eot', normal, normal);
+@include font-face('proxima_novaextrabold_italic', font-files('ProximaNova-XboldIt-webfont.woff', 'woff', 'ProximaNova-XboldIt-webfont.ttf', 'truetype', 'ProximaNova-XboldIt-webfont.svg', 'svg'), 'ProximaNova-XboldIt-webfont.eot', normal, normal);
+
+
+@include font-face('proxima_nova_rgregular', inline-font-files('ProximaNova-Reg-webfont.woff', 'woff', 'ProximaNova-Reg-webfont.ttf', 'truetype', 'ProximaNova-Reg-webfont.svg', 'svg'), 'ProximaNova-Reg-webfont.eot', normal, normal);
+@include font-face('proxima_novaregular_italic', font-files('ProximaNova-RegIt-webfont.woff', 'woff', 'ProximaNova-RegIt-webfont.ttf', 'truetype', 'ProximaNova-RegIt-webfont.svg', 'svg'), 'ProximaNova-RegIt-webfont.eot', normal, normal);
+
+
+@include font-face('proxima_novabold_italic', font-files('ProximaNova-BoldIt-webfont.woff', 'woff', 'ProximaNova-BoldIt-webfont.ttf', 'truetype', 'ProximaNova-BoldIt-webfont.svg', 'svg'), 'ProximaNova-BoldIt-webfont.eot', normal, normal);
+@include font-face('proxima_nova_rgbold', inline-font-files('ProximaNova-Bold-webfont.woff', 'woff', 'ProximaNova-Bold-webfont.ttf', 'truetype', 'ProximaNova-Bold-webfont.svg', 'svg'), 'ProximaNova-Bold-webfont.eot', normal, normal);
+
+
+@include font-face('proxima_novasemibold_italic', font-files('ProximaNova-SboldIt-webfont.woff', 'woff', 'ProximaNova-SboldIt-webfont.ttf', 'truetype', 'ProximaNova-SboldIt-webfont.svg', 'svg'), 'ProximaNova-SboldIt-webfont.eot', normal, normal);
+@include font-face('proxima_nova_ltsemibold', inline-font-files('ProximaNova-Sbold-webfont.woff', 'woff', 'ProximaNova-Sbold-webfont.ttf', 'truetype', 'ProximaNova-Sbold-webfont.svg', 'svg'), 'ProximaNova-Sbold-webfont.eot', normal, normal);
+
+
+@include font-face('proxima_novalight_italic', font-files('ProximaNova-LightIt-webfont.woff', 'woff', 'ProximaNova-LightIt-webfont.ttf', 'truetype', 'ProximaNova-LightIt-webfont.svg', 'svg'), 'ProximaNova-LightIt-webfont.eot', normal, normal);
+@include font-face('proxima_nova_ltlight', inline-font-files('ProximaNova-Light-webfont.woff', 'woff', 'ProximaNova-Light-webfont.ttf', 'truetype', 'ProximaNova-Light-webfont.svg', 'svg'), 'ProximaNova-Light-webfont.eot', normal, normal);

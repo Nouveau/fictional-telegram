@@ -1,0 +1,15 @@
+aaa_base:
+  version: VERSION
+  js:
+    js/aaa.js: {}
+  css:
+    theme:
+      style/css/aaa.styles.css: {}
+  dependencies:
+    - core/modernizr
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.announce
+    - core/backbone
+    - core/jquery.once

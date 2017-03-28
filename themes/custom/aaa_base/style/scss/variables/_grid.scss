@@ -1,0 +1,45 @@
+$susy: (
+  flow: ltr,
+  math: fluid,
+  container-position: $container-margin,
+  columns: 4,
+  gutters: 20px/55px,
+  column-width: false,
+  global-box-sizing: border-box,
+);
+
+$susy_tablet: (
+  columns: 12,
+  gutters: 36px/31px,
+  container-position: center,
+);
+
+$susy_small_desktop: (
+  columns: 12,
+  gutters: 45px/30px,
+);
+
+$susy_wide_desktop: (
+  columns: 12,
+  gutters: 60px/45px,
+);
+
+
+.container {
+  //@include layout($susy);
+  @include container();
+
+  @include breakpoint($tablet) {
+    @include layout($susy_tablet);
+  }
+
+  @include breakpoint($desktop-small) {
+    @include layout($susy_small_desktop);
+    @include container($desktop-small-container);
+  }
+
+  @include breakpoint($desktop-wide) {
+    @include layout($susy_wide_desktop);
+    @include container($desktop-wide-container);
+  }
+}

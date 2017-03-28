@@ -1,0 +1,75 @@
+// a small mixin for easy use of rem with px as fallback
+// usage: @include scale(font-size, 14px)
+// usage: @include scale(marign, 0 12px 2 1.2)
+// usage: @include scale(padding, 1.5 24px)
+//
+// thanks to Eric Meyer for https://github.com/ericam/susy
+// and Hans Christian Reinl for http://drublic.de/blog/rem-fallback-sass-less/
+
+@mixin scale($property, $values, $important: null) {
+  // Create a couple of empty lists as output buffers.
+  $px-values: ();
+  $rem-values: ();
+
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if index((0, 0px), $value) {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    }
+
+    @else if type-of($value) == number and not unitless($value) and unit($value) == px {
+      // px value given - calculate rem value from base-font-size
+      $new-rem-value: $value / $base-font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    }
+
+    @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $base-font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  // check for !important
+  @if $important {
+    $px-values: #{$px-values + " !important"};
+    $rem-values: #{$rem-values + " !important"};
+  }
+
+  // output the converted rules
+  @if $ie-8 == true {
+    #{$property}: $px-values;
+  }
+
+  @else {
+    #{$property}: $rem-values;
+  }
+}
+
+// Button.
+@mixin button($font-size, $border-radius, $color, $background) {
+  @include border-radius($border-radius);
+  @include fontsize-rem($font-size);
+  @include scale(padding, 12px 25px);
+  @include proxima-bold;
+  background: $background;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $color;
+  }
+
+  @include breakpoint($desktop-wide) {
+    @include fontsize-rem(25px);
+  }
+}

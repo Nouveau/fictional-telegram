@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Global styles
+ */
+
+body {
+  color: $base-font-color;
+  letter-spacing: -0.015em;
+}
+
+main {
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    @include scale(margin-left, 17px);
+  }
+}

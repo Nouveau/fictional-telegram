@@ -1,0 +1,20 @@
+one_column:
+  label: One column
+  category: AAA Base Theme
+  template: templates/layout_plugin/one-column
+  css: style/css/layout_plugin/one-column.css
+  icon: images/layouts/one-column.png
+  regions:
+    main:
+      label: Main content
+two_column:
+  label: Two column
+  category: AAA Base Theme
+  template: templates/layout_plugin/two-column
+  css: style/css/layout_plugin/two-column.css
+  icon: images/layouts/two-column.png
+  regions:
+    sidebar:
+      label: Sidebar
+    main:
+      label: Main content

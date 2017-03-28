@@ -1,0 +1,21 @@
+// Breakpoints definition.
+
+$mobile: 320px;
+$mobile-land: 480px;
+$tablet: 768px;
+$desktop-small: 895px; // With left and right gutters will be 1024
+$desktop-wide: 1230px; // With left and right gutters will be 1440
+$page-max-width: 1440px;
+
+$mobile-only: "screen" "max-width" ($tablet - 0.5);
+$mobile-and-tablet: "screen" "max-width" ($desktop-small - 1);
+$tablet-only: $tablet ($desktop-small - 1);
+$tablet-and-desktop-small: $tablet ($desktop-wide - 1);
+
+// Grid variables.
+$container-margin: 20px;
+$desktop-small-container: 855px;
+$desktop-wide-container: 1200px;
+
+// Added media queries for less than 480 width device.
+$mobile-land-only: "screen" "max-width" ($mobile-land - 1);

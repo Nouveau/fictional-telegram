@@ -1,0 +1,141 @@
+// Extends for the form elements.
+%webform-label {
+  @extend %regularsubhead;
+  @include scale(margin-bottom, 12px);
+  @include scale(margin-left, 10px);
+  display: block;
+
+  @include breakpoint($mobile-only) {
+    @include fontsize-rem(22px);
+    @include scale(margin-left, 0);
+  }
+}
+
+%webform-input {
+  @extend %body;
+  @include span(12 of 12);
+  @include box-sizing(border-box);
+  @include scale(padding, 10px);
+  background: $bg-grey-light;
+  border: 1px solid $border;
+}
+
+%error-message {
+  @include proxima-bold;
+  display: block;
+  color: $error;
+}
+
+.error-messages-block {
+  clear: both;
+}
+
+.field-error {
+  @include font-params(16px, 18px);
+  @include proxima-bold;
+  @include scale(margin, 0 0 15px 0);
+  clear: both;
+  color: $error;
+
+  @include breakpoint($tablet) {
+    @include scale(margin-left, 10px);
+  }
+}
+
+.form-submit-error {
+  @extend %error-message;
+}
+
+.aaa-form-label {
+  @include font-params(22px, 24px);
+  @include proxima-regular;
+  @include scale(margin, 15px 0 10px 0);
+  display: block;
+
+  @include breakpoint($tablet) {
+    @include scale(margin, 15px 0 10px 10px);
+  }
+}
+
+.form-label-info {
+  @include proxima-regular-italic;
+  @include font-params(15px, 21px);
+}
+
+.aaa-form-input {
+  @extend %body;
+  @include box-sizing(border-box);
+  @include scale(margin-bottom, 15px);
+  @include scale(padding, 11px);
+  background: $bg-grey-light;
+  border: 1px solid $border;
+  width: 100%;
+
+  &.error {
+    @include scale(margin-bottom, 10px);
+    border-color: $error;
+  }
+}
+
+.aaa-form-input-l {
+  @include box-sizing(border-box);
+  @include font-params(22px, 27px);
+  @include proxima-semibold;
+  @include scale(margin-bottom, 15px);
+  @include scale(padding, 4px 10px 4px 25px);
+  background: $bg-grey-light;
+  border: 1px solid $border;
+  width: 100%;
+
+  @include breakpoint($tablet-and-desktop-small) {
+    @include font-params(18px, 21px);
+  }
+}
+
+.form-checkbox:not(old) {
+  @include scale(height, 21px);
+  @include scale(width, 21px);
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  float: left;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+
+  & + label {
+    @include proxima-regular;
+    @include scale(padding-left, 37px);
+    display: block;
+    pointer-events: none;
+    position: relative;
+
+    &:before {
+      @include scale(height, 24px);
+      @include scale(width, 21px);
+      background-image: url('/sites/all/themes/custom/aaa_responsive/img/checkbox.png');
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      background-position: left top;
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
